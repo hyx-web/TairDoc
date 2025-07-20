@@ -1,5 +1,6 @@
 ## TairDoc
 TairDoc is a Redis module that supports JSON data storage and querying.
+## Don't run it with ReJSON!
 
 ## Dependent Projects
 TairDoc depends on [cJSON](https://github.com/DaveGamble/cJSON) and has implemented JSONPath syntax on top of it, see src/cJSON/cJSON_Utils.[h|c]
