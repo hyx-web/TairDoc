@@ -1,10 +1,5 @@
-## TairDoc [中文介绍](README-CN.md)
-TairDoc is a Valkey module that supports JSON data storage and querying.
-
-## Main Features
-- Supports [RFC8259](https://datatracker.ietf.org/doc/html/rfc8259) JSON standard.
-- Supports [RFC6901](https://datatracker.ietf.org/doc/html/rfc6901) JSONPointer syntax.
-- Partially compatible with [RFC9535](https://datatracker.ietf.org/doc/rfc9535/) JSONPath standard. (Currently, only the `JSON.GET` command supports JSONPath syntax)
+## TairDoc
+TairDoc is a Redis module that supports JSON data storage and querying.
 
 ## Dependent Projects
 TairDoc depends on [cJSON](https://github.com/DaveGamble/cJSON) and has implemented JSONPath syntax on top of it, see src/cJSON/cJSON_Utils.[h|c]
@@ -27,41 +22,8 @@ make
 ```
 After a successful compilation, a `tairdoc.so` file will be generated in the current directory.
 ```
-./valkey-server --loadmodule /path/to/tairdoc.so
+./redis-server --loadmodule /path/to/tairdoc.so
 ```
-
-## Run Test
-Modify the path in the tairdoc.tcl file under the test directory to: `set testmodule [file your_path/tairdoc.so]`
-
-Copy the tairdoc.tcl from the test directory to the valkey directory tests
-```
-cp test/tairdoc.tcl your_valkey_path/tests
-```
-Then run `./runtest --single tairdoc` in the valkey root directory, and the following result indicates a successful run.
-```
-...
-[ok]: json.arrpush/json.arrpop master-slave (2 ms)
-[ok]: json.arrinsert/json.arrtrim (2 ms)
-[ok]: Check for memory leaks (pid 57468) (499 ms)
-[ok]: Check for memory leaks (pid 57456) (457 ms)
-[1/1 done]: tairdoc (5 seconds)
-
-                   The End
-
-Execution time of different units:
-  5 seconds - tairdoc
-
-\o/ All tests passed without errors!
-```
-
-## Clients
-| language | GitHub |
-|----------|---|
-| Java     |[https://github.com/alibaba/alibabacloud-tairjedis-sdk](https://github.com/alibaba/alibabacloud-tairjedis-sdk)|
-| Python   |[https://github.com/alibaba/tair-py](https://github.com/alibaba/tair-py)|
-| Go       |[https://github.com/alibaba/tair-go](https://github.com/alibaba/tair-go)|
-| .Net     |[https://github.com/alibaba/AlibabaCloud.TairSDK](https://github.com/alibaba/AlibabaCloud.TairSDK)|
-
 ## API
 
 ### JSON.SET
